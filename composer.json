@@ -1,0 +1,13 @@
+{
+    "name": "alaa_alawneh/php_laravel_internship_project",
+    "description": "PHP laravel project as part of an internship at ITG",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alaa Alawneh",
+            "email": "3laa.alawneh@gmail.com"
+        }
+    ],
+    "require": {}
+}
