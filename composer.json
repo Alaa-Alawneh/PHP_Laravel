@@ -9,5 +9,7 @@
             "email": "3laa.alawneh@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vulcas/phpdotenv":"^5.6"        
+    }
 }
