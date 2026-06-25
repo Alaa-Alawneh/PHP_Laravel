@@ -1,0 +1,13 @@
+a {
+    color: inherit;
+    text-decoration: inherit; 
+}
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;   /* header, main, footer */
+    margin: 0;
+}
+td{
+    padding: 1rem;
+}

@@ -1,5 +1,9 @@
 services:
   db:
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     image: mysql:8
     container_name: php_project_db_container
     environment:
@@ -15,7 +19,7 @@ services:
   phpmyadmin:    
     depends_on:
       db:
-        condition: service_started    
+        condition: service_healthy
     image: phpmyadmin/phpmyadmin
     container_name: php_project_pma_container
     profiles:
