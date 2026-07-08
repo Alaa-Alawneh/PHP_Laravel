@@ -5,28 +5,27 @@ services:
       timeout: 20s
       retries: 10
     image: mysql:8
-    container_name: php_project_db_container
+    container_name: sportclub_db
     environment:
-      MYSQL_DATABASE: ${MYSQL_DB_NAME}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
-      - "${PORT_NUMBER}:${PORT_NUMBER}"
+      - "${DB_PORT}:3306"
     volumes:
-      - ./database/users.sql:/docker-entrypoint-initdb.d/users.sql
       - mysql_data:/var/lib/mysql 
   phpmyadmin:    
     depends_on:
       db:
         condition: service_healthy
     image: phpmyadmin/phpmyadmin
-    container_name: php_project_pma_container
+    container_name: phpmyadmin_container
     profiles:
       - dev      
     environment:
       PMA_HOST: db
-      PMA_PORT: ${PORT_NUMBER}
+      PMA_PORT: 3306
     ports:
       - "8080:80"
     restart: on-failure
