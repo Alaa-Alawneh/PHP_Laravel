@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\PlayerController;
+
 
 Route::view("/","home")->name('home');
 
@@ -28,4 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::view('/player/dashboard', 'dashboards.player')
     ->middleware('role:player')
     ->name('player.dashboard');
+});
+Route::middleware(['auth', 'role:trainer'])->group(function () {
+    Route::resource('players', PlayerController::class)->except(['show']);
 });

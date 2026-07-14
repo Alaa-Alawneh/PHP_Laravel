@@ -23,8 +23,23 @@ uses tailwind css and daisyui for ready-components
 - open http://127.0.0.1:8000 
 
 # Screenshots
+Homepage
 ![Homepage](docs/screenshots/home.png)
+Registration
 ![Registration](docs/screenshots/register.png)
+Login
 ![Login](docs/screenshots/login.png)
+Trainer Dashboard
 ![Trainer Dashboard](docs/screenshots/trainer.png)
+Player Dashboard
 ![Player Dashboard](docs/screenshots/player.png)
+Player Management
+![Player Management](docs/screenshots/playerManagement.png)
+Player Adding
+![Player Adding](docs/screenshots/playerAdd.png)
+Player Editing
+![Player Editing](docs/screenshots/playerEdit.png)
+Trainer-trainer Editing(not allowed)
+![Trainer-trainer Editing(not allowed)](docs/screenshots/playerTrainerEdit.png)
+Player Delete
+![Player Delete](docs/screenshots/playerDelete.png)
