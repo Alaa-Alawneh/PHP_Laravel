@@ -14,8 +14,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $players = Player::latest()->paginate(10);
-        //not Player::all()->get; because we care about getting latest players first for a better ux
+        $players = Player::OrderBy("first_name","asc")->paginate(10);
 
         return view("players.index", compact("players"));
     }

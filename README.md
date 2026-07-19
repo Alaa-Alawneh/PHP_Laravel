@@ -20,9 +20,11 @@ uses tailwind css and daisyui for ready-components
 
 - `npm run dev` to build and watch front end assets (will require its own terminal)
 - `php artisan serve` to run the app (will require its own terminal)
-- open http://127.0.0.1:8000 
+- open `localhost:8000` 
+- optionally you can run `php artisan db:seed --class=PlayerSeeder` to create a bunch of dummy players
 
 # Screenshots
+## stage 2
 Homepage
 ![Homepage](docs/screenshots/home.png)
 Registration
@@ -33,6 +35,7 @@ Trainer Dashboard
 ![Trainer Dashboard](docs/screenshots/trainer.png)
 Player Dashboard
 ![Player Dashboard](docs/screenshots/player.png)
+## stage 3
 Player Management
 ![Player Management](docs/screenshots/playerManagement.png)
 Player Adding
@@ -43,3 +46,12 @@ Trainer-trainer Editing(not allowed)
 ![Trainer-trainer Editing(not allowed)](docs/screenshots/playerTrainerEdit.png)
 Player Delete
 ![Player Delete](docs/screenshots/playerDelete.png)
+## stage 4
+Match List
+![Match Show](docs/screenshots/matchList.png)
+Match Create/Edit
+![Match Create](docs/screenshots/matchCreate.png)
+Match Details
+![Match Details](docs/screenshots/matchDetails.png)
+Player Assignment
+![Player Assignment](docs/screenshots/playerMatchAssignment.png)

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\PlayerController;
-
+use App\Http\Controllers\MatchController;
+use App\Http\Controllers\MatchPlayerController;
 
 Route::view("/","home")->name('home');
 
@@ -33,4 +34,9 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware(['auth', 'role:trainer'])->group(function () {
     Route::resource('players', PlayerController::class)->except(['show']);
+
+    
+    Route::resource('matches', MatchController::class);
+    Route::put('matches/{match}/players', [MatchPlayerController::class, 'update'])
+    ->name('matches.players.update');
 });

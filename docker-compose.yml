@@ -1,9 +1,11 @@
 services:
   db:
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 20s
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${DB_ROOT_PASSWORD}"]
+      interval: 5s        # check every 5s instead of every 30s
+      timeout: 5s         # a ping shouldn't need 20s
       retries: 10
+      start_period: 10s   # grace period during boot — failures here don't count against retries
     image: mysql:8
     container_name: sportclub_db
     environment:
